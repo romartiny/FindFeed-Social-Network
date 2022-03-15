@@ -2,8 +2,10 @@
 $con = mysqli_connect('localhost', 'root', 'root', 'social');
 
 if(mysqli_connect_errno()) {
-    echo  'error with: ' . mysqli_connect_errno();
+    echo  'Error with the connection: ' . mysqli_connect_errno();
 }
+
+$query = mysqli_query($con, "INSERT INTO test VALUES(NULL, 'Second check')"); //add user
 
 ?>
 <!DOCTYPE html>
