@@ -27,12 +27,12 @@ if(isset($_POST['register_button'])) {
     $lname = ucfirst(strtolower($lname));
 
     //email
-    $em = strip_tags($_POST['reg_em']);
+    $em = strip_tags($_POST['reg_email']);
     $em = str_replace(' ', '', $em);
     $em = ucfirst(strtolower($em));
 
     //email repeat
-    $em2 = strip_tags($_POST['reg_em2']);
+    $em2 = strip_tags($_POST['reg_email2']);
     $em2 = str_replace(' ', '', $em2);
     $em2 = ucfirst(strtolower($em2));
 
@@ -42,6 +42,28 @@ if(isset($_POST['register_button'])) {
 
     //date
     $date = date('Y-m-d'); //use libriary
+
+    if($em == $em2){
+        if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
+
+            $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+
+            $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'");
+
+            $num_rows = mysqli_num_rows($e_check);
+
+            if($num_rows > 0) {
+                echo 'Email already in use';
+            }
+
+        }
+        else {
+            echo 'Invalid format';
+        }
+    } 
+    else {
+        echo 'Email dont match';
+    }
 
 
 }
@@ -70,7 +92,7 @@ if(isset($_POST['register_button'])) {
         <br>
         <input type='password' name='reg_password2' placeholder='Confirm Password' required>
         <br>
-        <input type='submit' name='registration_button' value='Register'>
+        <input type='submit' name='register_button' value='Register'>
     </form>
 </body>
 </html>
