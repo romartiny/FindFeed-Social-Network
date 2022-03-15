@@ -1,3 +1,53 @@
+<?php
+$con = mysqli_connect('localhost', 'root', 'root', 'social');
+
+if(mysqli_connect_errno()) {
+    echo  'Error with the connection: ' . mysqli_connect_errno();
+}
+
+$fname = '';
+$lname = '';
+$em = '';
+$em2 = '';
+$password = '';
+$password2 = '';
+$date = '';
+$error_array = '';
+
+if(isset($_POST['register_button'])) {
+
+    //first name
+    $fname = strip_tags($_POST['reg_fname']);
+    $fname = str_replace(' ', '', $fname);
+    $fname = ucfirst(strtolower($fname));
+
+    //last name
+    $lname = strip_tags($_POST['reg_lname']);
+    $lname = str_replace(' ', '', $lname);
+    $lname = ucfirst(strtolower($lname));
+
+    //email
+    $em = strip_tags($_POST['reg_em']);
+    $em = str_replace(' ', '', $em);
+    $em = ucfirst(strtolower($em));
+
+    //email repeat
+    $em2 = strip_tags($_POST['reg_em2']);
+    $em2 = str_replace(' ', '', $em2);
+    $em2 = ucfirst(strtolower($em2));
+
+    //password
+    $password = strip_tags($_POST['reg_password']);
+    $password2 = strip_tags($_POST['reg_password2']);
+
+    //date
+    $date = date('Y-m-d'); //use libriary
+
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

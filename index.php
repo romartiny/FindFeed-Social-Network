@@ -5,8 +5,6 @@ if(mysqli_connect_errno()) {
     echo  'Error with the connection: ' . mysqli_connect_errno();
 }
 
-$query = mysqli_query($con, "INSERT INTO test VALUES(NULL, 'Second check')"); //add user
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
