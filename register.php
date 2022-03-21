@@ -14,7 +14,7 @@ $em2 = '';
 $password = '';
 $password2 = '';
 $date = '';
-$error_array = '';
+$error_array = array();
 
 if(isset($_POST['register_button'])) {
 
@@ -59,37 +59,37 @@ if(isset($_POST['register_button'])) {
             $num_rows = mysqli_num_rows($e_check);
 
             if($num_rows > 0) {
-                echo 'Email already in use';
+                array_push($error_array, 'Email already in use<br>');
             }
 
         }
         else {
-            echo 'Invalid format';
+            array_push($error_array, 'Invalid email format<br>');
         }
     } 
     else {
-        echo 'Email dont match';
+        array_push($error_array, 'Email dont match<br>');
     }
 
     if(strlen($fname) > 25 || strlen($fname) < 2) {
-        echo 'Your first name must be between 2 and 25 symbols';
+        array_push($error_array, 'Your first name must be between 2 and 25 symbols');
     }
 
     if(strlen($lname) > 25 || strlen($lname) < 2) {
-        echo 'Your last name must be between 2 and 25 symbols';
+        array_push($error_array, 'Your last name must be between 2 and 25 symbols');
     }
 
     if($password != $password2) {
-        echo 'Passwords do not match';
+        array_push($error_array, 'Passwords do not match');
     }
     else {
         if(preg_match('/[^A-Za-z0-9]/', $password)) {
-            echo 'Password can only contain english symbols and numbers';
+            array_push($error_array, 'Password can only contain english symbols and numbers');
         }
     }
 
     if(strlen($password > 30 || strlen($password)) < 5) {
-        echo 'Password must be between 5 and 30 symbols';
+        array_push($error_array, 'Password must be between 5 and 30 symbols');
     }
 
 
