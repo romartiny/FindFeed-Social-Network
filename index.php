@@ -1,9 +1,5 @@
 <?php
-$con = mysqli_connect('localhost', 'root', 'root', 'social');
-
-if(mysqli_connect_errno()) {
-    echo  'Error with the connection: ' . mysqli_connect_errno();
-}
+require 'config/config.php';
 
 ?>
 <!DOCTYPE html>
