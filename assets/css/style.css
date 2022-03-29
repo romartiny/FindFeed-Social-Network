@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'CeraPro-Bold';
+    src: url('../fonts/CeraPro-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'CeraPro-Light';
+    src: url('../fonts/CeraPro-Light.ttf');
+}
+
+body {
+    line-height: 27px;
+    background-color: #202020;
+}
+
+.top_bar {
+    width: 100%;
+    min-width: 1050px;
+    height: 30px;
+    background-color: #424242;
+    border-bottom: 1px solid #252323;
+    margin: 0 0 10px 0;
+    display: inline-flex;
+    position: fixed;
+}
+
+.logo a {
+    font-family: 'CeraPro-Bold', sans-serif;
+    margin-left: 10px;
+    font-size: 25px;
+    position: relative;
+    top: 9%;
+    color: #FFFFFF;
+
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+nav {
+    float: right;
+    right: 1px;
+    position: absolute;
+    margin: 3px;
+}
+
+nav a {
+    position: relative;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: #b2b2b2;
+}
+
+.wrapper {
+    margin: 0 auto;
+    top: 50px;
+    position: relative;
+    padding: 0 10px;
+    width: 75%;
+    min-width: 950px;
+}
+
+.column {
+    background-color: #FFFFFF;
+    padding: 10px;
+    border: 1px solid #282828;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.user_details {
+    width: 250px;
+    float: left;
+    margin-bottom: 10px;
+    background-color: #424242;
+    color: #FFFFFF;
+}
+
+.user_details_left_right {
+    width: 125px;
+    display: inline-block;
+    position: absolute;
+}
+
+.user_details img {
+    height: 125px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.main_column {
+    float: right;
+    width: 70%;
+    z-index: -1;
+    min-height: 130px;
+    background-color: #424242;
+}
+
+.post_form {
+    width: 100%;
+}
+
+.post_form textarea {
+    width: 80%;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 2px solid #5f5f5f;
+    font-size: 12px;
+    background-color: #424242;
+    color: #FFFFFF;
+    border-radius: 13px;
+    padding: 5px;
+}
+
+textarea:focus {
+    outline: 0;
+}
+
+.post_form input[type='submit'] {
+    font-family: 'CeraPro-Bold', sans-serif;
+    color: #FFFFFF;
+    width: 12%;
+    height: 72px;
+    border: none;
+    border-radius: 6px;
+    background-color: #282828;
+    position: absolute;
+    font-size: 90%;
+    outline: none;
+    margin: 0;
+}
+
+.post_form input[type='submit']:active {
+    padding: 5px 4px 4px 5px;
+
+}
