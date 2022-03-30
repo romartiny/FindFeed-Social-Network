@@ -11,13 +11,10 @@ else {
 }
 
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
 
@@ -60,6 +57,10 @@ else {
             <a href='#'>
                 <i class="fa-solid fa-gear"></i>
             </a>
+
+            <a href='includes/handlers/logout.php'>
+                <i class="fa-solid fa-right-from-bracket"></i>
+            <a>
         </nav>
     </div>
 

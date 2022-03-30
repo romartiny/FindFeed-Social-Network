@@ -22,6 +22,7 @@ body {
     margin: 0 0 10px 0;
     display: inline-flex;
     position: fixed;
+    z-index: 100;
 }
 
 .logo a {
@@ -138,5 +139,4 @@ textarea:focus {
 
 .post_form input[type='submit']:active {
     padding: 5px 4px 4px 5px;
-
 }
