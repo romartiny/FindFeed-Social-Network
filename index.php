@@ -33,7 +33,6 @@ if(isset($_POST['post'])) {
     <form class='post_form' action='index.php' method='post'>
         <textarea name='post_text' id='post_text' placeholder='Got something interesting'></textarea>
         <input type='submit' name='post' id='post_button' value='Post'>
-        <hr>
     </form>
 
     <div class='posts_area'></div>

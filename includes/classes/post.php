@@ -79,6 +79,10 @@ class Post {
                     continue;
                 }
 
+                $user_logged_obj = new User($this->con, $userLoggedIn);
+
+                if($user_logged_obj->isFriend($added_by)) {
+
                 if($num_iterations++ < $start) {
                     continue;
                 }
@@ -166,20 +170,22 @@ class Post {
                     }
 
                     $str .= "<div class='status_post'>
-                                <div class='post_profile_pic'>
-                                    <img src='$profile_pic' width='50'>
-                                </div>
-
                                 <div class='posted_by' style='color: #FFFFFF;'>
-                                    <a href='$added_by'>$first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                    <a class='posted_a'href='$added_by'>$first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;
                                         $time_message
                                 </div>
-                                <div id='post_body' style='color: #FFFFFF'>
+                                <div class='post_profile_pic'>
+                                    <img src='$profile_pic' width='50' class='post_profile_pic_img'>
+                                </div>
+
+                                <div id='post_body' class='post_body_item' style='color: #FFFFFF;'>
                                     $body
                                     <br>
                                 </div>
                             </div>
-                            <hr style='color: #131311'>";
+                            <hr style='color: #b21f11'>";
+                    }
                 }
 
                 if($count > $limit) 
