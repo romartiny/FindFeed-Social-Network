@@ -68,7 +68,7 @@ class Post {
                     $user_to = '';
                 }
                 else {
-                    $user_to_obj = new User($con, $row['user_to']);
+                    $user_to_obj = new User($con, $row['user_to']);  //$this->con ?????
                     $user_to_name = $user_to_obj->getFirstAndLastName;
                     $user_to = "to <a href='" . $row['user_to'] . '>' . $user_to_name . "</a>";
                 }
@@ -98,6 +98,22 @@ class Post {
                 $first_name = $user_row['first_name'];
                 $last_name = $user_row['last_name'];
                 $profile_pic = $user_row['profile_pic'];
+
+                ?>
+
+                <script>
+                    function toggle<?php echo $id; ?>() {
+                    var element = document.getElementById('toggleComment<?php echo $id; ?>');
+
+                    if(element.style.display == 'block')
+                        element.style.display = 'none';
+                    else
+                        element.style.display = 'block';
+                }
+                </script>
+
+
+                <?php
 
                 $date_time_now = date('Y-m-d H:i:s');
                 $start_date = new DateTime($date_time);
@@ -169,7 +185,7 @@ class Post {
                         }
                     }
 
-                    $str .= "<div class='status_post'>
+                    $str .= "<div class='status_post' onClick='javascript:toggle$id()'>
                                 <div class='posted_by' style='color: #FFFFFF;'>
                                 
                                     <a class='posted_a'href='$added_by'>$first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;
@@ -183,6 +199,9 @@ class Post {
                                     $body
                                     <br>
                                 </div>
+                            </div>
+                            <div class='post_comment' id='toggleComment$id' style='display: none;'>
+                                <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' frameborder='0'></iframe>
                             </div>
                             <hr style='color: #b21f11'>";
                     }
