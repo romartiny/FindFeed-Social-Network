@@ -1,7 +1,7 @@
 <?php
 include('includes/header.php');
-include('includes/classes/user.php');
-include('includes/classes/post.php');
+// include('includes/classes/user.php');
+// include('includes/classes/post.php');
 
 if(isset($_POST['post'])) {
     $post = new Post($con, $userLoggedIn);

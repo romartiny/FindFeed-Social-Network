@@ -1,5 +1,7 @@
 <?php
 include('includes/header.php');
+
+
 // session_destroy();
 if(isset($_GET['profile_username'])) {
     $username = $_GET['profile_username'];
@@ -11,12 +13,49 @@ if(isset($_GET['profile_username'])) {
     $user_last_name = $user_array['last_name'];
 }
 
+if(isset($_POST['remove_friend'])) {
+    $user = new User($con, $userLoggedIn);
+    $user->removeFriend($username);
+}
+
+if(isset($_POST['add_friend'])) {
+    $user = new User($con, $userLoggedIn);
+    $user->sendRequest($username);
+}
+
+if(isset($_POST['respond_request'])) {
+    header('Location: requests.php');
+}
+
 ?>
 
     <div class='profile_left'>
         <div class='profile_photo'>
             <img src='<?php echo $user_array['profile_pic']; ?>'>
         </div>
+        <form action='<?php echo $username;?>' method='POST'>
+            <?php $profile_user_obj = new User($con, $username); 
+            if($profile_user_obj->isClosed()) {
+                header('Location: user_closed.php');
+            }
+
+            $logged_in_user_obj = new User($con, $userLoggedIn);
+            
+            if($userLoggedIn != $username) {
+                if($logged_in_user_obj->isFriend($username)) {
+                    echo '<input type="submit" name="remove_friend" class="danger" value="Remove Friend"><br>';
+                } else if ($logged_in_user_obj->didReveiveRequest($username)) {
+                    echo '<input type="submit" name="respond_request" class="warning" value="Respond to Request"><br>';
+                } else if ($logged_in_user_obj->didSendRequest($username)) {
+                    echo '<input type="submit" name="" class="default" value="Request Sent"><br>'; 
+                } else {
+                    echo '<input type="submit" name="add_friend" class="success" value="Add Friend"><br>'; 
+                }
+            }
+            ?>
+
+
+        </form>
     </div>
 
     <div class='profile_info'>
@@ -26,19 +65,18 @@ if(isset($_GET['profile_username'])) {
         </p>
         <div class='profile_info_data'>
                 <div class='profile_data'>
-                    <p class='profile_text'>Posts</p>
-                    <p><?php echo $user_array['num_posts']; ?></p>
+                    <p class='profile_text'><?php echo 'Posts <br>' . $user_array['num_posts']; ?></p>
                 </div>
                 <div class='profile_data'>
-                    <p class='profile_text'><?php echo 'Likes: ' . $user_array['num_likes']; ?></p>
+                    <p class='profile_text'><?php echo 'Likes <br>' . $user_array['num_likes']; ?></p>
                 </div>
                 <div class='profile_data'>
-                    <p class='profile_text'><?php echo 'Friend: ' . $num_friends; ?></p>
+                    <p class='profile_text'><?php echo 'Friends <br>' . $num_friends; ?></p>
                 </div>
         </div>
     </div>
     
-    <div class='main_column column'>
+    <div class='main_column column main-column'>
         <?php echo $username ?>
     </div>
 

@@ -103,17 +103,27 @@ class Post {
 
                 <script>
                     function toggle<?php echo $id; ?>() {
-                    var element = document.getElementById('toggleComment<?php echo $id; ?>');
 
-                    if(element.style.display == 'block')
-                        element.style.display = 'none';
-                    else
-                        element.style.display = 'block';
+                    // var element = document.getElementById("toggleComment<?php echo $id; ?>");
+
+                    // var target = $(event.target);
+
+                    // if (!target.is("a")) {
+                        var element = document.getElementById("toggleComment<?php echo $id; ?>");
+
+                        if(element.style.display == 'block')
+                            element.style.display = 'none';
+                        else
+                            element.style.display = 'block';
+                    // }
                 }
                 </script>
 
 
                 <?php
+
+                $comments_check = mysqli_query($this->con, "SELECT * FROM comments WHERE post_id='$id'");
+                $comments_check_num = mysqli_num_rows($comments_check);
 
                 $date_time_now = date('Y-m-d H:i:s');
                 $start_date = new DateTime($date_time);
@@ -152,7 +162,7 @@ class Post {
                         if($interval->d == 1) {
                             $time_message = 'Yesterday';
                         } else {
-                            $time_message = ' dats ago';
+                            $time_message = ' day ago';
                         }
 
                     }
@@ -198,7 +208,14 @@ class Post {
                                 <div id='post_body' class='post_body_item' style='color: #FFFFFF;'>
                                     $body
                                     <br>
+                                    <br>
                                 </div>
+
+                                <div class='newsfeedPostOptions'>
+                                    <iframe src='like.php?post_id=$id' scrolling='no'></iframe>
+                                    Comments($comments_check_num)&nbsp;&nbsp;
+                                </div>
+
                             </div>
                             <div class='post_comment' id='toggleComment$id' style='display: none;'>
                                 <iframe src='comment_frame.php?post_id=$id' id='comment_iframe' frameborder='0'></iframe>
