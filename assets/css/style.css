@@ -419,5 +419,49 @@ textarea:focus {
 }
 
 .deep_blue {
-    color: #0043f0;
+    color: #255be3;
+}
+
+.request_title {
+    display: block;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #29d1ff;
+    align-items: center;
+}
+
+.request_send {
+    color: #fbfbfb;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#accept_button {
+    font-family: 'CeraPro-Bold', sans-serif;
+    color: #FFFFFF;
+    background-color: transparent;
+    border-radius: 1px solid #181716;
+    width: 110px;
+    margin-left: 100px;
+}
+
+#ignore_button {
+    font-family: 'CeraPro-Bold', sans-serif;
+    color: #ff7777;
+    background-color: transparent;
+    width: 110px;
+    margin-left: 10px;
+}
+
+.request_pic {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.request_message {
+    margin-top: -73px;
+    margin-left: 100px;
 }
