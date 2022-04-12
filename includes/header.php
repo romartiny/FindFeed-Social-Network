@@ -19,11 +19,17 @@ else {
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap1.js"></script>
+    <script src="assets/js/bootbox.min.js"></script>
+    <script src="assets/js/demo.js"></script>
+    <script src="assets/js/jcrop_bits.js"></script>
+    <script src="assets/js/jquery.Jcrop.js"></script>
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"> -->
     <script src="https://kit.fontawesome.com/6ee2d24a43.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.Jcrop.css">
+
     <title>Findfeed</title>
 </head>
 

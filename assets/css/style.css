@@ -177,7 +177,7 @@ textarea:focus {
     width: 17%;
     max-width: 180px;
     min-width: 180px;
-    height: 250px;
+    height: 300px;
     float: left;
     position: relative;
     background-color: #424242;
@@ -200,7 +200,12 @@ textarea:focus {
     margin-left: 15px;
     border-radius: 50%;
     margin-top: 12px;
-    margin-left: 27px;
+    /* margin-left: 27px; */
+}
+
+.profile_pic_main {
+    height: 150px;
+    width: 150px;
 }
 
 .profile_text {
@@ -389,13 +394,12 @@ textarea:focus {
     border-color: #848484;
     font-size: 15px;
     border-radius: 5px;
-    margin-top: 30px;
 }
 
 .profile_left input[type="submit"] {
     margin-left: 15px;
     width: 150px;
-    margin-top: 60px;
+    /* margin-top: -30px; */
 }
 
 .danger {
@@ -411,6 +415,7 @@ textarea:focus {
 }
 
 .success {
+    margin-top: 25px;
     color: #2ecc71;
 }
 
@@ -419,7 +424,8 @@ textarea:focus {
 }
 
 .deep_blue {
-    color: #255be3;
+    margin-top: 30px;
+    color: #6691fe;
 }
 
 .request_title {
@@ -464,4 +470,42 @@ textarea:focus {
 .request_message {
     margin-top: -73px;
     margin-left: 100px;
+}
+
+.modal_header {
+    margin-top: 130px;
+}
+
+.modal, .modal-footer{
+    background-color: #313131;
+}
+
+.modal textarea {
+    color: #FFFFFF;
+    width: 480px;
+    background-color: #313131;
+    resize: none;
+}
+
+.delete_button {
+    height: 22px;
+    width: 22px;
+    font-size: 16px;
+    padding: 0;
+    float: right;
+    right: -15px;
+    position: relative;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    color: #FFFFFF;
+}
+
+.bootbox-body {
+    font-family: 'CeraPro-Bold', sans-serif;
+    color: #FFFFFF;
+}
+
+.upload_picture_text {
+    font-family: 'CeraPro-Bold', sans-serif;
 }

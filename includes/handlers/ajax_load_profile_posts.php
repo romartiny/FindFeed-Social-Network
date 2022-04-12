@@ -1,0 +1,11 @@
+<?php
+include('../../config/config.php');
+include('../classes/user.php');
+include('../classes/post.php');
+
+$limit = 10;
+
+$posts = new Post($con, $_REQUEST['userLoggedIn']);
+$posts->loadProfilePosts($_REQUEST, $limit);
+
+?>
