@@ -2,6 +2,7 @@
 require 'config/config.php';
 include('includes/classes/user.php');
 include('includes/classes/post.php');
+include('includes/classes/message.php');
 
 if(isset($_SESSION['username'])) {
     $userLoggedIn = $_SESSION['username'];
