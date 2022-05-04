@@ -37,14 +37,25 @@ if(isset($_POST['post_message'])) {
         <?php echo 'Posts: ' . $user['num_posts'] . '<br>';
             echo 'Likes: ' . $user['num_likes']; ?>
     </div>
+
+    <div class="user_details_peek" id="conversations">
+                <h4 class="conversation_mes"> Conversation</h4>
+                <div class="loaded_conversations">
+                    <?php echo $message_obj->getConvos(); ?>
+                </div>
+                <br>
+                <a href="messages.php?u=new">New Message</a>
+    </div>
 </div>
+
+
 
 <div class="main-column column" id="main_column">
     <?php
         if($user_to != "new") {
             $user_to_obj = new User($con, $user_to); //NEED FIX
             echo "<h4>You and <a href='$user_to'>" . $user_to_obj->getFirstAndLastName() . "</a></h4>";
-            echo "<div class='loaded_messages'>";
+            echo "<div class='loaded_messages' id='scroll_messages'>";
             echo $message_obj->getMessage($user_to);
             echo "</div>";
         } else {
@@ -66,5 +77,13 @@ if(isset($_POST['post_message'])) {
             ?>
         </form>
     </div>
+
+    <script>
+        var div = document.getElementById("scroll_messages");
+        div.scrollTop = div.scrollHeight;
+    </script>
+
 </div>
+
+
 

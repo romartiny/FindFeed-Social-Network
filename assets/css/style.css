@@ -75,12 +75,25 @@ nav a:hover {
 }
 
 .user_details {
-    
     width: 250px;
     float: left;
     margin-bottom: 10px;
     background-color: #424242;
     color: #FFFFFF;
+}
+
+.user_details_peek {
+    width: 250px;
+    margin-top: 130px;
+    float: left;
+    margin-bottom: 10px;
+    background-color: #424242;
+    color: #FFFFFF;
+}
+
+.conversation_mes {
+    margin-left: 75px;
+    margin-bottom: 30px;
 }
 
 .user_details_left_right {
@@ -509,3 +522,103 @@ textarea:focus {
 .upload_picture_text {
     font-family: 'CeraPro-Bold', sans-serif;
 }
+
+#message_textarea {
+    background: none;
+    resize: none;
+    height: 50px;
+    color: #FFFFFF;
+    width: 80%;
+    border-radius: 10px;
+    border-color: #5f5f5f;
+}
+
+#message_submit {
+    height: 50px;
+    margin-left: 5%;
+    width: 13%;
+    border-radius: 10px;
+    border-color: #ababab;
+}
+
+.message {
+    border-radius: 5px;
+    display: inline-block;
+    padding: -8px -20px;
+    color: #FFFFFF;
+}
+
+.message#blue {
+    background-color: #3498db;
+    border-color: #FFFFFF;
+    float: right;
+    min-height: -11px;
+    padding: 0px 3px;
+}
+
+.message#green {
+    background-color: #155245;
+    float: left;
+    min-height: -11px;
+    padding: 0px 3px;
+}
+
+.scrollable-element {
+    scrollbar-color: dark;
+  }
+
+.loaded_messages {
+    height: 65%;
+    min-height: 300px;
+    max-height: 400px;
+    overflow: scroll;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(86, 86, 86);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(151, 151, 151);
+    border-radius: 20px;
+  }
+
+  .loaded_messages {
+      height: 65%;
+      min-height: 300px;
+      max-height: 400px;
+      overflow: scroll;
+      margin-bottom: 10px;
+  }
+
+  .loaded_conversations {
+      max-height: 155px;
+      overflow: scroll;
+  }
+
+  .user_found_messages {
+      border-bottom: 1px solid #FFFFFF;
+      padding: 8px 8px 50px 8px;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+  }
+
+  .user_found_messages:hover {
+      background-color: #FFFFFF;
+  }
+
+  .user_found_messages img {
+      height: 30px;
+      float: left;
+      color: #FFFFFF;
+  }
